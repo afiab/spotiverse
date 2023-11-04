@@ -1,0 +1,22 @@
+:root {
+    --black: #000000;
+    --white: #faf0e6;
+    --primary: #3cde5a;
+    --secondary: #003F91;
+    --primShade: #00530F;
+    --secondShate: #5DA9E9;
+    --tertiary: #F46262; 
+  }
+
+/* font */
+.logo{
+    color: var(--primary);
+    text-shadow:
+    1px 1px 2px var(--secondary),
+    -1px 1px 0 var(--secondary),
+    -1px -1px 2px var(--secondary),
+    1px -1px 0 var(--secondary);
+}
+
+/* nav bar */
+
