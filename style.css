@@ -25,19 +25,19 @@ nav {
     padding: .001em;
   }
   
-  li {
+  .navlist {
     display: inline;
     padding: .5em;
   }
   
-  li a {
+  .navlist a {
     text-decoration: none;
     background-color: var(--secondary);
     color: var(--white);
     font-size: 1.3em;
   }
   
-  li a:hover {
+  .navlist a:hover {
     background-color: var(--primary);
     color: var(--secondary);
     font-size: 1.3em;
