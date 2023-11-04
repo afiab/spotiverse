@@ -4,7 +4,7 @@ def navlist(filename, element):
     return "<li class=\"navlist\"><a href=\""+filename+".html\">"+element+"</a></li>"
 
 def main():
-    navElems = ["Home","Diversity Score","Discover","Settings"];
+    navElems = ["Home","Diversity Score","Discover","Play", "Settings"];
     for elem in navElems:
         print(navlist(elem.split(" ")[0].lower(),elem));
 
