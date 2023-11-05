@@ -42,6 +42,7 @@
     -1px 1px 0 var(--secondary),
     -1px -1px 2px var(--secondary),
     1px -1px 0 var(--secondary);
+    font-size: 2.5em;
 }
 
 h2{
