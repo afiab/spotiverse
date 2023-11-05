@@ -13382,9 +13382,9 @@ function setup() {
 function draw() {
     clear();
     textSize(20);
-    text("Score: "+score,width/2,50);
+    text("Score: "+score,5,50);
     if(mouse.presses()){
-        block = new Sprite(mouseX,0-(score*size),size,size,'d');
+        block = new Sprite(mouseX,0-(score*size),size,size/2,'d');
         blocks.push(block);
     }
     score = 1;
@@ -13399,22 +13399,22 @@ function draw() {
             blocks.splice(i,1);
         }
     }
-    if(level == 1){
-        // platform.rotation = 1;
-        if(platform.x - 50<0){
-            right = !right;
-        }else if(platform.x + 50 > width){
-            right = !right;
-        }if(right){
-            platform.x += 0.5;
-            for(let i=0;i<blocks.length-1;i++){
-                blocks[i].x+=0.5;
-            }
-        }else if(!right){
-            platform.x -= 0.5;
-            for(let i=0;i<blocks.length-1;i++){
-                blocks[i].x-=0.5;
-            }
-        }
-    }
+    // if(level == 1){
+    //     // platform.rotation = 1;
+    //     if(platform.x - 50<0){
+    //         right = !right;
+    //     }else if(platform.x + 50 > width){
+    //         right = !right;
+    //     }if(right){
+    //         platform.x += 1;
+    //         for(let i=0;i<blocks.length-1;i++){
+    //             blocks[i].x+=1;
+    //         }
+    //     }else if(!right){
+    //         platform.x -=1;
+    //         for(let i=0;i<blocks.length-1;i++){
+    //             blocks[i].x-=1;
+    //         }
+    //     }
+    // }
 }
