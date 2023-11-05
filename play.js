@@ -13395,7 +13395,11 @@ function setup() {
 function storeVal(){
     songname = this.value();
     if (songs[songname]){
-        wsize = 100-Object.values(songs[songname])[2];
+        if(Object.values(songs[songname])[0]==country){
+            wsize = 100-Object.values(songs[songname])[2];
+        }else{
+            wsize = 0;
+        }
     }else{
         wsize = 0;
     }
@@ -13405,11 +13409,13 @@ function draw() {
     clear();
     textSize(20);
     text("Score: "+score,5,50);
+    text("Country: "+country,350, 50);
     if(kb.released('enter')){
         input.input(storeVal);
         if(wsize!=0){
             block = new Sprite(width/2,0-(score*size),wsize*4,size/2);
             blocks.push(block);
+            country = countries[Math.floor(Math.random()*countries.length)]
         }
     }
     score = 1;
