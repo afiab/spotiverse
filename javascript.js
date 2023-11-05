@@ -1,6 +1,6 @@
 // import songsdata from universal_top_spotify_songs;
 // var songs = JSON.parse(fs.readFileSync(songsdata));
-var songs = {
+let songs = {
     "iPlan": {
         "country": "ZA",
         "artists": "Dlala Thukzin, Zaba, Sykes",
@@ -13370,5 +13370,5 @@ var testButton = document.getElementById("test");
 testButton.addEventListener("click",print);
 
 function print(){
-    text.innerHTML = songs["iPlan"];
+    text.innerHTML = Object.values(songs["iPlan"]);
 }
