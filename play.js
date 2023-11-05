@@ -13382,18 +13382,36 @@ let wsize;
 let songname;
 let right = true;
 let country = "US";
-var screenadjust = 200;
+var screenadjust = 215;
 
 function setup() {
     createCanvas(500, 500);
     background(backgroundColor);
     world.gravity.y = 7;
-    platform = new Sprite(width/2,height-10,width,5,'k');
+    platform = new Sprite(width/2,height-50,width,5,'k');
     platform.color = platformColor;
     input = createInput("Type a Top50 Song from "+country);
     input.position(16, 2+screenadjust);
     input.size(400);
     // input.input(storeVal);
+    color = createInput("To Change Colors Type: background/block/platform r g b");
+    color.size(400);
+    // color.input(changeColor);
+}
+
+function changeColor(){
+    let command = this.value().split(" ");
+    let r = command[1];
+    let g = command[2];
+    let b = command[3];
+    if(command[0]=="background"){
+        backgroundColor = (r,g,b);
+    }else if(command[0]=="block"){
+        goodBlockColor = (r,g,b);
+    }else if(command[0]=="platform"){
+        platformColor = (r,g,b);
+        platform.color = platformColor;
+    }
 }
 
 function storeVal(){
@@ -13411,9 +13429,14 @@ function storeVal(){
 
 function draw() {
     clear();
+    background(backgroundColor);
+    platform.color = platformColor;
     textSize(20);
     text("Score: "+score,5,50);
     text("Country: "+country,350, 50);
+    if(kb.released('+')){
+        color.input(changeColor);
+    }
     if(kb.released('enter')){
         input.input(storeVal);
         if(wsize!=0){
