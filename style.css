@@ -8,6 +8,14 @@
     --tertiary: #F46262; 
   }
 
+  /* p5 play sketch */
+  #sketchHolder {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   /* background */
   body{
     background-color: var(--white);
