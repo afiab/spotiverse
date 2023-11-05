@@ -13363,9 +13363,78 @@ let songs = {
 
 let countries=["ZA","VN","VE","UY","US","UA","TW","TR","TH","SV","SK","SG","SE","SA",
 "RO","PY","PT","PL","PK","PH","PE","PA","NZ","NO","NL","NI","NG","MY","MX","MA",
-"LV","LU","LT","KZ","KR","JP","IT","IS","IN","IL","IE","ID","HU","HN","HK","GT",
-"GR","GB","FR","FI","ES","EG","EE","EC","DO","DK","DE","CZ","CR","CO","CL","CH",
-"CA","BY","BR","BO","BG","BE","AU","AT","AR","AE"];
+"LV","LU","LT","KZ","JP","IT","IS","IN","IL","IE","ID","HU","HN","HK","GT",
+"GR","GB","FR","FI","ES","EG","EC","DO","DK","DE","CZ","CR","CL","CH",
+"CA","BY","BR","BO","BG","BE","AU","AT","AR"];
+
+let countrlISts={
+    "ZA":"Zambia",
+"VN":"Vietnam",
+"VE":"Venezuela",
+"UY":"Uruguay",
+"US":"United States",
+"UA":"Ukraine",
+"TW":"Taiwan",
+"TR":"Turkey",
+"TH":"Thailand",
+"SV":"Slovakia",
+"SK":"South Korea",
+"SG":"Singapore",
+"SE":"Sweden",
+"SA":"Saudi Arabia",
+"RO":"Romania",
+"PY":"Paraguay",
+"PT":"Portugal",
+"PL":"Poland",
+"PK":"Pakistan",
+"PH":"Philippines",
+"PE":"Peru",
+"PA":"Panama",
+"NZ":"New Zealand",
+"NO":"Norway",
+"NL":"Netherlands",
+"NI":"Nicaragua",
+"NG":"Nigeria",
+"MY":"Malaysia",
+"MX":"Mexico",
+"MA":"Malta",
+"LV":"Latvia",
+"LU":"Luxembourg",
+"LT":"Lithuania",
+"KZ":"Kazakhstan",
+"JP":"Japan",
+"IT":"Italy",
+"IS":"Israel",
+"IN":"Indonesia",
+"IL":"Ireland",
+"IE":"Iceland",
+"ID":"India",
+"HU":"Hungary",
+"HN":"Honduras",
+"HK":"Hong Kong",
+"GT":"Guatemala",
+"GR":"Greece",
+"GB":"Great Britain",
+"FR":"France",
+"FI":"Finland",
+"ES":"Estonia",
+"EG":"Egypt",
+"EC":"Ecuador",
+"DO":"Dominican Republic",
+"DK":"Denmark",
+"CZ":"Czech Republic",
+"CR":"Costa Rica",
+"CL":"Colombia",
+"CH":"Chile",
+"CA":"Canada",
+"BR":"Brazil",
+"BO":"Bolivia",
+"BG":"Bulgaria",
+"BE":"Belgium",
+"AU":"Australia",
+"AT":"Austria",
+"AR":"Argentina",
+"AE":"United Arab Emirates"};
 // youtube tutorial i followed: https://www.youtube.com/watch?v=eCzB08TcYcw
 
 let backgroundColor = "#faf0e6";
@@ -13390,7 +13459,7 @@ function setup() {
     world.gravity.y = 7;
     platform = new Sprite(width/2,height-10,width,5,'k');
     platform.color = platformColor;
-    input = createInput("Type a Top50 Song from "+country+" and press ENTER");
+    input = createInput("Type a Top50 Song from "+countrlISts[country]+" and press ENTER");
     input.position(16, 2+screenadjust);
     input.size(400);
     // input.input(storeVal);
@@ -13433,7 +13502,7 @@ function draw() {
     platform.color = platformColor;
     textSize(20);
     text("Score: "+score,5,50);
-    text("Country: "+country,350, 50);
+    text("Country: "+countrlISts[country],100, 50);
     if(kb.released('+')){
         color.input(changeColor);
     }

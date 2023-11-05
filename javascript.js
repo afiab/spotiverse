@@ -13363,6 +13363,75 @@ let songs = {
     }
 }
 
+let countrlISts={
+    "ZA":"Zambia",
+"VN":"Vietnam",
+"VE":"Venezuela",
+"UY":"Uruguay",
+"US":"United States",
+"UA":"Ukraine",
+"TW":"Taiwan",
+"TR":"Turkey",
+"TH":"Thailand",
+"SV":"Slovakia",
+"SK":"South Korea",
+"SG":"Singapore",
+"SE":"Sweden",
+"SA":"Saudi Arabia",
+"RO":"Romania",
+"PY":"Paraguay",
+"PT":"Portugal",
+"PL":"Poland",
+"PK":"Pakistan",
+"PH":"Philippines",
+"PE":"Peru",
+"PA":"Panama",
+"NZ":"New Zealand",
+"NO":"Norway",
+"NL":"Netherlands",
+"NI":"Nicaragua",
+"NG":"Nigeria",
+"MY":"Malaysia",
+"MX":"Mexico",
+"MA":"Malta",
+"LV":"Latvia",
+"LU":"Luxembourg",
+"LT":"Lithuania",
+"KZ":"Kazakhstan",
+"JP":"Japan",
+"IT":"Italy",
+"IS":"Israel",
+"IN":"Indonesia",
+"IL":"Ireland",
+"IE":"Iceland",
+"ID":"India",
+"HU":"Hungary",
+"HN":"Honduras",
+"HK":"Hong Kong",
+"GT":"Guatemala",
+"GR":"Greece",
+"GB":"Great Britain",
+"FR":"France",
+"FI":"Finland",
+"ES":"Estonia",
+"EG":"Egypt",
+"EC":"Ecuador",
+"DO":"Dominican Republic",
+"DK":"Denmark",
+"CZ":"Czech Republic",
+"CR":"Costa Rica",
+"CL":"Colombia",
+"CH":"Chile",
+"CA":"Canada",
+"BR":"Brazil",
+"BO":"Bolivia",
+"BG":"Bulgaria",
+"BE":"Belgium",
+"AU":"Australia",
+"AT":"Austria",
+"AR":"Argentina",
+"AE":"United Arab Emirates"};
+
 // console.log(songs);
 
 var text = document.getElementById("replaceme");
@@ -13382,7 +13451,7 @@ function printPopularity(){
 }
 function printCountry(){
     var songname = document.getElementById("songname").value;
-    text.innerHTML = "The country of "+songname+" is "+Object.values(songs[songname])[0];
+    text.innerHTML = "The country of "+songname+" is "+countrlISts[Object.values(songs[songname])[0]];
 }
 function printArtists(){
     var songname = document.getElementById("songname").value;
