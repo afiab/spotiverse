@@ -6,6 +6,15 @@ The home page is sufficient in explaining the usage of the page.
 
 Link: https://afiab.github.io/spotiverse/
 
+## Accessibility
+A screen reader should be able to read all the content on the website. The site is mobile friendly unless the mobile screen is less than 500 pixels wide, in that case the only thing that isn't mobile friendly is the game because it's sized by pixels.
+
+The game has a text input field underneath it where players can
+input commands to customize the colors of the shapes, background, 
+and text in the game. The syntax is the keyword followed by the 
+hex code. The input field is also labeled with the syntax
+beforehand.
+
 ## Notes
 I intended to use SpotifyAPI but couldn't understand the logistics of authentication, which is why I used a Kaggle Data Set instead. 
 
