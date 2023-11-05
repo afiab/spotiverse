@@ -13390,7 +13390,7 @@ function setup() {
     world.gravity.y = 7;
     platform = new Sprite(width/2,height-50,width,5,'k');
     platform.color = platformColor;
-    input = createInput("Type a Top50 Song from "+country);
+    input = createInput("Type a Top50 Song from "+country+" and press ENTER");
     input.position(16, 2+screenadjust);
     input.size(400);
     // input.input(storeVal);
