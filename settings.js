@@ -15,25 +15,25 @@ var secShade =document.getElementById("secShade");
 secShade.addEventListener("click",changeSecShade);
 
 function changeBlack(){
-    r.style.setProperty('--black', document.getElementById("blackEvent"));
+    r.documentElement.style.setProperty('--black', document.getElementById("blackEvent"));
 }
 
 function changeWhite(){
-    r.style.setProperty('--white', document.getElementById("whiteEvent"));
+    r.documentElement.style.setProperty('--white', document.getElementById("whiteEvent"));
 }
 
 function changePrimary(){
-    r.style.setProperty('--primary', document.getElementById("primaryEvent"));
+    r.documentElement.style.setProperty('--primary', document.getElementById("primaryEvent"));
 }
 
 function changeSecondary(){
-    r.style.setProperty('--secondary', document.getElementById("secondaryEvent"));
+    r.documentElement.style.setProperty('--secondary', document.getElementById("secondaryEvent"));
 }
 
 function changePrimeShade(){
-    r.style.setProperty('--primShade', document.getElementById("primShadeEvent"));
+    r.documentElement.style.setProperty('--primShade', document.getElementById("primShadeEvent"));
 }
 
 function changeSecShade(){
-    r.style.setProperty('--secondShate', document.getElementById("secShadeEvent"));
+    r.documentElement.style.setProperty('--secondShate', document.getElementById("secShadeEvent"));
 }
