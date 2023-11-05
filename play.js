@@ -13361,6 +13361,11 @@ let songs = {
     }
 }
 
+let countries=["ZA","VN","VE","UY","US","UA","TW","TR","TH","SV","SK","SG","SE","SA",
+"RO","PY","PT","PL","PK","PH","PE","PA","NZ","NO","NL","NI","NG","MY","MX","MA",
+"LV","LU","LT","KZ","KR","JP","IT","IS","IN","IL","IE","ID","HU","HN","HK","GT",
+"GR","GB","FR","FI","ES","EG","EE","EC","DO","DK","DE","CZ","CR","CO","CL","CH",
+"CA","BY","BR","BO","BG","BE","AU","AT","AR","AE"];
 // youtube tutorial i followed: https://www.youtube.com/watch?v=eCzB08TcYcw
 
 let platform;
@@ -13377,6 +13382,8 @@ function setup() {
     world.gravity.y = 7;
     platform = new Sprite(width/2,height-10,100,5,'k');
     platform.color = "blue";
+    // input = creatInput("Type a Top50 Song from "+countries[Math.random()*countries.length-1]);
+    // input.position(16, 2);
 }
 
 function draw() {
