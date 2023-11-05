@@ -13394,7 +13394,7 @@ function setup() {
     input.position(16, 2+screenadjust);
     input.size(400);
     // input.input(storeVal);
-    color = createInput("To Change Colors Type: background/block/platform #hexcode");
+    color = createInput("To Change Colors Type: background/block/platform/text #hexcode");
     color.size(400);
     // color.input(changeColor);
 }
@@ -13409,6 +13409,8 @@ function changeColor(){
     }else if(command[0]=="platform"){
         platformColor = (r);
         platform.color = platformColor;
+    }else if(command[0]=="text"){
+        stroke(r);
     }
 }
 
