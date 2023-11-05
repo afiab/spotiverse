@@ -13361,3 +13361,26 @@ let songs = {
     }
 }
 
+// youtube tutorial i followed: https://www.youtube.com/watch?v=eCzB08TcYcw
+
+let platform;
+let block;
+let blocks = [];
+let score = 1;
+let size = 40;
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    background(250,240,230);
+    world.gravity.y = 7;
+    platform = new Sprite(width/2,height/2,100,5,'k');
+    platform.color = "blue";
+}
+
+function draw() {
+    clear();
+    if(mouse.presses()){
+        block = new Sprite(mouseX,0-(score*size),size,size,'d');
+        blocks.push(block);
+    }
+}
