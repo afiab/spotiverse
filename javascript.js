@@ -13366,9 +13366,22 @@ let songs = {
 // console.log(songs);
 
 var text = document.getElementById("replaceme");
-var testButton = document.getElementById("test");
-testButton.addEventListener("click",print);
 
-function print(){
-    text.innerHTML = Object.values(songs["iPlan"]);
+var text = document.getElementById("replaceme");
+var popularity = document.getElementById("popularity");
+popularity.addEventListener("click",printPopularity);
+var country = document.getElementById("country");
+country.addEventListener("click",printCountry);
+var artists = document.getElementById("artists");
+artists.addEventListener("click",printArtists);
+
+
+function printPopularity(){
+    text.innerHTML = Object.values(songs["iPlan"])[2];
+}
+function printCountry(){
+    text.innerHTML = Object.values(songs["iPlan"])[0];
+}
+function printArtists(){
+    text.innerHTML = Object.values(songs["iPlan"])[1];
 }
