@@ -13368,6 +13368,10 @@ let countries=["ZA","VN","VE","UY","US","UA","TW","TR","TH","SV","SK","SG","SE",
 "CA","BY","BR","BO","BG","BE","AU","AT","AR","AE"];
 // youtube tutorial i followed: https://www.youtube.com/watch?v=eCzB08TcYcw
 
+let backgroundColor = (250,240,230);
+let goodBlockColor = "green";
+let platformColor = "blue";
+
 let platform;
 let block;
 let blocks = [];
@@ -13382,10 +13386,10 @@ var screenadjust = 200;
 
 function setup() {
     createCanvas(500, 500);
-    background(250,240,230);
+    background(backgroundColor);
     world.gravity.y = 7;
     platform = new Sprite(width/2,height-10,width,5,'k');
-    platform.color = "blue";
+    platform.color = platformColor;
     input = createInput("Type a Top50 Song from "+country);
     input.position(16, 2+screenadjust);
     input.size(400);
@@ -13422,7 +13426,7 @@ function draw() {
     for(let i=0; i<blocks.length-1; i++){
         if(blocks[i].colliding(blocks[i+1])){
             score+=1;
-            blocks[i].color = "green";
+            blocks[i].color = goodBlockColor;
         }
     }
     for(let i=0;i<blocks.length-1;i++){
@@ -13430,22 +13434,4 @@ function draw() {
             blocks.splice(i,1);
         }
     }
-    // if(level == 1){
-    //     // platform.rotation = 1;
-    //     if(platform.x - 50<0){
-    //         right = !right;
-    //     }else if(platform.x + 50 > width){
-    //         right = !right;
-    //     }if(right){
-    //         platform.x += 1;
-    //         for(let i=0;i<blocks.length-1;i++){
-    //             blocks[i].x+=1;
-    //         }
-    //     }else if(!right){
-    //         platform.x -=1;
-    //         for(let i=0;i<blocks.length-1;i++){
-    //             blocks[i].x-=1;
-    //         }
-    //     }
-    // }
 }
