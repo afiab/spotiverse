@@ -13378,13 +13378,13 @@ artists.addEventListener("click",printArtists);
 
 function printPopularity(){
     var songname = document.getElementById("songname").value;
-    text.innerHTML = Object.values(songs[songname])[2];
+    text.innerHTML = "The popularity score of "+songname+" is "+Object.values(songs[songname])[2] +"/100";
 }
 function printCountry(){
     var songname = document.getElementById("songname").value;
-    text.innerHTML = Object.values(songs[songname])[0];
+    text.innerHTML = "The country of "+songname+" is "+Object.values(songs[songname])[0];
 }
 function printArtists(){
     var songname = document.getElementById("songname").value;
-    text.innerHTML = Object.values(songs[songname])[1];
+    text.innerHTML = songname+" is created by "+Object.values(songs[songname])[1];
 }
