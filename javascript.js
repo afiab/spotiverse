@@ -13377,11 +13377,14 @@ artists.addEventListener("click",printArtists);
 
 
 function printPopularity(){
-    text.innerHTML = Object.values(songs["iPlan"])[2];
+    var songname = document.getElementById("songname").value;
+    text.innerHTML = Object.values(songs[songname])[2];
 }
 function printCountry(){
-    text.innerHTML = Object.values(songs["iPlan"])[0];
+    var songname = document.getElementById("songname").value;
+    text.innerHTML = Object.values(songs[songname])[0];
 }
 function printArtists(){
-    text.innerHTML = Object.values(songs["iPlan"])[1];
+    var songname = document.getElementById("songname").value;
+    text.innerHTML = Object.values(songs[songname])[1];
 }
