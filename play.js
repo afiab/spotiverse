@@ -13368,7 +13368,7 @@ let countries=["ZA","VN","VE","UY","US","UA","TW","TR","TH","SV","SK","SG","SE",
 "CA","BY","BR","BO","BG","BE","AU","AT","AR","AE"];
 // youtube tutorial i followed: https://www.youtube.com/watch?v=eCzB08TcYcw
 
-let backgroundColor = (250,240,230);
+let backgroundColor = "#faf0e6";
 let goodBlockColor = "green";
 let platformColor = "blue";
 
@@ -13394,7 +13394,7 @@ function setup() {
     input.position(16, 2+screenadjust);
     input.size(400);
     // input.input(storeVal);
-    color = createInput("To Change Colors Type: background/block/platform r g b");
+    color = createInput("To Change Colors Type: background/block/platform #hexcode");
     color.size(400);
     // color.input(changeColor);
 }
@@ -13402,14 +13402,12 @@ function setup() {
 function changeColor(){
     let command = this.value().split(" ");
     let r = command[1];
-    let g = command[2];
-    let b = command[3];
     if(command[0]=="background"){
-        backgroundColor = (r,g,b);
+        backgroundColor = (r);
     }else if(command[0]=="block"){
-        goodBlockColor = (r,g,b);
+        goodBlockColor = (r);
     }else if(command[0]=="platform"){
-        platformColor = (r,g,b);
+        platformColor = (r);
         platform.color = platformColor;
     }
 }
