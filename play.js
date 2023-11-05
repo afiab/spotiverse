@@ -13366,21 +13366,55 @@ let songs = {
 let platform;
 let block;
 let blocks = [];
+let level = 1;
 let score = 1;
 let size = 40;
+let right = true;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(500, 500);
     background(250,240,230);
     world.gravity.y = 7;
-    platform = new Sprite(width/2,height/2,100,5,'k');
+    platform = new Sprite(width/2,height-10,100,5,'k');
     platform.color = "blue";
 }
 
 function draw() {
     clear();
+    textSize(20);
+    text("Score: "+score,width/2,50);
     if(mouse.presses()){
         block = new Sprite(mouseX,0-(score*size),size,size,'d');
         blocks.push(block);
+    }
+    score = 1;
+    for(let i=0; i<blocks.length-1; i++){
+        if(blocks[i].colliding(blocks[i+1])){
+            score+=1;
+            blocks[i].color = "green";
+        }
+    }
+    for(let i=0;i<blocks.length-1;i++){
+        if(blocks[i].y>height){
+            blocks.splice(i,1);
+        }
+    }
+    if(level == 1){
+        // platform.rotation = 1;
+        if(platform.x - 50<0){
+            right = !right;
+        }else if(platform.x + 50 > width){
+            right = !right;
+        }if(right){
+            platform.x += 0.5;
+            for(let i=0;i<blocks.length-1;i++){
+                blocks[i].x+=0.5;
+            }
+        }else if(!right){
+            platform.x -= 0.5;
+            for(let i=0;i<blocks.length-1;i++){
+                blocks[i].x-=0.5;
+            }
+        }
     }
 }
