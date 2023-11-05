@@ -13374,6 +13374,8 @@ let blocks = [];
 let level = 1;
 let score = 1;
 let size = 40;
+let wsize;
+let songname;
 let right = true;
 let country = "US";
 var screenadjust = 200;
@@ -13382,26 +13384,33 @@ function setup() {
     createCanvas(500, 500);
     background(250,240,230);
     world.gravity.y = 7;
-    platform = new Sprite(width/2,height-10,100,5,'k');
+    platform = new Sprite(width/2,height-10,width,5,'k');
     platform.color = "blue";
     input = createInput("Type a Top50 Song from "+country);
     input.position(16, 2+screenadjust);
     input.size(400);
-    button = createButton("submit");
-    button.position(input.x+input.width, 3+screenadjust);
+    // input.input(storeVal);
+}
+
+function storeVal(){
+    songname = this.value();
+    if (songs[songname]){
+        wsize = 100-Object.values(songs[songname])[2];
+    }else{
+        wsize = 0;
+    }
 }
 
 function draw() {
     clear();
     textSize(20);
     text("Score: "+score,5,50);
-    if(mouse.presses()){
-        block = new Sprite(mouseX,0-(score*size),size,size/2,'d');
-        blocks.push(block);
-    }
-    function submit(){
-        block = new Sprite(mouseX,0-(score*size),size,size/2,'d');
-        blocks.push(block);
+    if(kb.released('enter')){
+        input.input(storeVal);
+        if(wsize!=0){
+            block = new Sprite(width/2,0-(score*size),wsize*4,size/2);
+            blocks.push(block);
+        }
     }
     score = 1;
     for(let i=0; i<blocks.length-1; i++){
